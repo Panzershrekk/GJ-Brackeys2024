@@ -3206,7 +3206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashes:
-  - {fileID: 5467459545399092868, guid: c669abd5506ed44d481559a4a897d471, type: 3}
+  - {fileID: 8535130604097490909, guid: 4bc91b593a95766408f4f1c0b4f8b900, type: 3}
+  - {fileID: 9129676578338340617, guid: 746eafe23512f2d4c84e7ffd0975ef0b, type: 3}
   instantiateTrashes: 1
 --- !u!65 &5683518851371446488
 BoxCollider:
