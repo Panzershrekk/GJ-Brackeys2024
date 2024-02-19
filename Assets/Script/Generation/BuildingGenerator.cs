@@ -11,10 +11,10 @@ public class BuildingGenerator : MonoBehaviour
   {
     Dictionary<Transform, List<Transform>> buildingDictionary = CreateBuildingDictionary();
 
-    SpawnBuilding(buildingDictionary, roomPrefabs);
+    generateBuilding(buildingDictionary, roomPrefabs);
   }
 
-  private void SpawnBuilding(Dictionary<Transform, List<Transform>> buildingDictionary, GameObject[] roomPrefabs)
+  private void generateBuilding(Dictionary<Transform, List<Transform>> buildingDictionary, GameObject[] roomPrefabs)
   {
     roomPrefabs = ShuffleRoomPrefabs(roomPrefabs);
 
@@ -83,6 +83,8 @@ public class BuildingGenerator : MonoBehaviour
     {
       Transform floorTransform = buildingTransform.GetChild(index);
 
+      // TODO: move to Class for Floor/Room etc.
+      // GetCompoentInChildren with plural or not
       if (floorTransform.name.Contains("FLOOR_"))
       {
         floors.Add(floorTransform);
