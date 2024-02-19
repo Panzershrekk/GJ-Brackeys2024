@@ -71,7 +71,7 @@ public class SuckableBehaviour : MonoBehaviour
 
     private void MoveTowardDestination()
     {
-        rb.isKinematic = true;
+        //rb.isKinematic = true;
         col.enabled = false;
         transform.DOScale(0.1f, endSequence);
         transform.DOShakeRotation(endSequence, 90, 10, 90, false, ShakeRandomnessMode.Harmonic);

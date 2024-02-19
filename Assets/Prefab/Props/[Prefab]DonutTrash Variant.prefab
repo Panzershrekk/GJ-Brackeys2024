@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 4300000, guid: a6f2f9aabc1ec494ab3cd3f305f1110c, type: 3}
     - target: {fileID: 8477952153235748919, guid: f8a9237800ad30440a04e295c346e5bd, type: 3}
       propertyPath: m_Name
-      value: '[Prefab]TestProbsBig Variant'
+      value: '[Prefab]DonutTrash Variant'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

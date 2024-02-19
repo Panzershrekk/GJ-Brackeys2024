@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 4300000, guid: 38e4a753657f23748ba481064f837c0d, type: 3}
     - target: {fileID: 8477952153235748919, guid: f8a9237800ad30440a04e295c346e5bd, type: 3}
       propertyPath: m_Name
-      value: '[Prefab]TestProbsSmall Variant'
+      value: '[Prefab]SnackTrashVariant'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

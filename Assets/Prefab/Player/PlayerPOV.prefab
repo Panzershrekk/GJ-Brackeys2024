@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 687143195507252329}
   - component: {fileID: 2716644039759579462}
   - component: {fileID: 1294097599862911720}
-  - component: {fileID: 6137283276300046336}
   m_Layer: 0
   m_Name: PlayerPOV
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130864292260086719}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.5266298, z: -0, w: 0.8500948}
+  m_LocalRotation: {x: 0, y: -0.5266294, z: 0, w: 0.85009503}
   m_LocalPosition: {x: 4.79, y: 1, z: -6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -92,34 +91,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.5
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6137283276300046336
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130864292260086719}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.12, y: 0.35, z: 1}
-  m_Center: {x: 0, y: -0.206352, z: 0}
+  m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!1 &1587443422196766242
 GameObject:
   m_ObjectHideFlags: 0
