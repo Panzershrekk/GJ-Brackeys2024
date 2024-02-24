@@ -70,7 +70,7 @@ MonoBehaviour:
   suckControll: {fileID: 687143195507252329}
   suckingMovePenality: 0.5
   lookSpeed: 4.89
-  lookXLimit: 45
+  lookXLimit: 90
   canMove: 1
 --- !u!143 &1294097599862911720
 CharacterController:
@@ -125,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 1587443422196766242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.557, z: 0.191}
+  m_LocalPosition: {x: 0, y: 0.41, z: -0.178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 6639756058866128637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.213, z: 0.819}
+  m_LocalPosition: {x: 0, y: 0.131, z: 0.434}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,8 +251,8 @@ Transform:
   m_GameObject: {fileID: 8679773556243698602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.5571, z: 6.11}
-  m_LocalScale: {x: 2.0127025, y: 2.0051212, z: 11.862141}
+  m_LocalPosition: {x: -0.03999996, y: -0.4101, z: 6.479003}
+  m_LocalScale: {x: 2.012702, y: 2.0051212, z: 11.862141}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890035423079835137}
@@ -272,7 +272,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8679773556243698602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

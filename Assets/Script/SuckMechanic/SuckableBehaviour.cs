@@ -42,25 +42,40 @@ public class SuckableBehaviour : MonoBehaviour
 
             if (isSucked)
             {
-                if (_shakeTween == null)
+                bool lineOfSigh = false;
+                Ray ray = new Ray(_suckZone.suckOrigin.position, this.transform.position - _suckZone.suckOrigin.position);
+
+                RaycastHit hitInfo;
+                if (Physics.Raycast(ray, out hitInfo))
                 {
-                    _shakeTween = transform.DOShakeScale(0.1f, 0.05f, 1, 10, true, ShakeRandomnessMode.Harmonic).OnComplete(() =>
+                    Debug.Log("Hitinfo " + hitInfo.transform.name);
+                    if (hitInfo.transform.GetComponent<SuckableBehaviour>() == null)
                     {
-                        transform.localScale = _baseScale;
-                        _shakeTween = null;
-                    });
+                        lineOfSigh = true;
+                    }
                 }
-                float distance = Mathf.Abs(Vector3.Distance(transform.position, _suckZone.suckOrigin.transform.position));
-                float proximityMultiplier = 1;
-                if (distance > proximityThresold)
+                if (lineOfSigh == false)
                 {
-                    proximityMultiplier /= distance * proximityFactor;
-                }
-                _currentResitanceTime += Time.deltaTime * proximityMultiplier;
-                if (_currentResitanceTime > _trueResistanceTime)
-                {
-                    _isCompletelySucked = true;
-                    MoveTowardDestination();
+                    if (_shakeTween == null)
+                    {
+                        _shakeTween = transform.DOShakeScale(0.1f, 0.05f, 1, 10, true, ShakeRandomnessMode.Harmonic).OnComplete(() =>
+                        {
+                            transform.localScale = _baseScale;
+                            _shakeTween = null;
+                        });
+                    }
+                    float distance = Mathf.Abs(Vector3.Distance(transform.position, _suckZone.suckOrigin.transform.position));
+                    float proximityMultiplier = 1;
+                    if (distance > proximityThresold)
+                    {
+                        proximityMultiplier /= distance * proximityFactor;
+                    }
+                    _currentResitanceTime += Time.deltaTime * proximityMultiplier;
+                    if (_currentResitanceTime > _trueResistanceTime)
+                    {
+                        _isCompletelySucked = true;
+                        MoveTowardDestination();
+                    }
                 }
             }
             else
