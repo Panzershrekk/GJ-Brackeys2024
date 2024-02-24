@@ -9,6 +9,7 @@ public class BuildingGenerationBis : MonoBehaviour
     public RoomConfiguration[] roomPrefabs;
     public int depthMax = 2;
     public int deadZoneInZ = 3;
+
     public List<RoomConfiguration> roomConfigurations = new List<RoomConfiguration>();
     // Start is called before the first frame update
     void Start()
