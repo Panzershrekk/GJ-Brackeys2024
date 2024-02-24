@@ -118,9 +118,9 @@ public class RoomConfiguration : MonoBehaviour
         south?.CreateLinkedRoom(buildingGenerationBis, depth - 1);
         east?.CreateLinkedRoom(buildingGenerationBis, depth - 1);
         west?.CreateLinkedRoom(buildingGenerationBis, depth - 1);
-        if (isInitialRoom)
+        if (isInitialRoom && eastTransition == null)
         {
-            Instantiate(doorWall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 0, 0f), this.transform);
+            eastTransition = Instantiate(doorWall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 0, 0f), this.transform);
         }
     }
 
@@ -138,25 +138,21 @@ public class RoomConfiguration : MonoBehaviour
         return null;
     }
 
-    public void CreateEnviro(Quaternion rotation)
-    {
-    }
-
     public void End()
     {
-        if (north == null)
+        if (north == null && northTransition == null)
         {
             northTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 90, 0f), this.transform);
         }
-        if (south == null)
+        if (south == null && southTransition == null)
         {
             southTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 270, 0f), this.transform);
         }
-        if (east == null && !isInitialRoom)
+        if (east == null && !isInitialRoom && eastTransition == null)
         {
             eastTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 0, 0f), this.transform);
         }
-        if (west == null)
+        if (west == null && westTransition == null)
         {
             westTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 180, 0f), this.transform);
         }
