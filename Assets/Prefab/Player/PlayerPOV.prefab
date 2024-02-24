@@ -65,10 +65,10 @@ MonoBehaviour:
   playerCamera: {fileID: 1752849920999455257}
   walkSpeed: 6
   runSpeed: 12
-  jumpPower: 7
-  gravity: 10
+  jumpPower: 12
+  gravity: 50
   suckControll: {fileID: 687143195507252329}
-  suckingMovePenality: 0.5
+  suckingMovePenality: 0.4
   lookSpeed: 4.89
   lookXLimit: 90
   canMove: 1
