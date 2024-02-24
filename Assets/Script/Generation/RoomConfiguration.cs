@@ -12,6 +12,12 @@ public class RoomConfiguration : MonoBehaviour
     public RoomConfiguration east;
     public RoomConfiguration south;
     public RoomConfiguration west;
+
+    public GameObject northTransition;
+    public GameObject eastTransition;
+    public GameObject southTransition;
+    public GameObject westTransition;
+
     public Collider colliderRoomSize;
 
     public GameObject doorWall;
@@ -75,7 +81,6 @@ public class RoomConfiguration : MonoBehaviour
         {
             north.name = "ROOM_NORTH_" + depth;
             buildingGenerationBis.roomConfigurations.Add(north);
-            CreateEnviro(transform.rotation * Quaternion.Euler(0f, 90, 0f));
             north.south = this;
         }
 
@@ -86,7 +91,6 @@ public class RoomConfiguration : MonoBehaviour
         {
             south.name = "ROOM_SOUTH_" + depth;
             buildingGenerationBis.roomConfigurations.Add(south);
-            CreateEnviro(transform.rotation * Quaternion.Euler(0f, 270, 0f));
             south.north = this;
         }
 
@@ -97,7 +101,6 @@ public class RoomConfiguration : MonoBehaviour
         {
             east.name = "ROOM_EAST_" + depth;
             buildingGenerationBis.roomConfigurations.Add(east);
-            CreateEnviro(transform.rotation * Quaternion.Euler(0f, 0, 0f));
             east.west = this;
         }
 
@@ -108,10 +111,8 @@ public class RoomConfiguration : MonoBehaviour
         {
             west.name = "ROOM_WEST_" + depth;
             buildingGenerationBis.roomConfigurations.Add(west);
-            CreateEnviro(transform.rotation * Quaternion.Euler(0f, 180, 0f));
             west.east = this;
         }
-
 
         north?.CreateLinkedRoom(buildingGenerationBis, depth - 1);
         south?.CreateLinkedRoom(buildingGenerationBis, depth - 1);
@@ -139,26 +140,50 @@ public class RoomConfiguration : MonoBehaviour
 
     public void CreateEnviro(Quaternion rotation)
     {
-        //Instantiate(doorWall, this.transform.position, rotation, this.transform);
     }
 
     public void End()
     {
         if (north == null)
         {
-            Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 90, 0f), this.transform);
+            northTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 90, 0f), this.transform);
         }
         if (south == null)
         {
-            Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 270, 0f), this.transform);
+            southTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 270, 0f), this.transform);
         }
         if (east == null && !isInitialRoom)
         {
-            Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 0, 0f), this.transform);
+            eastTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 0, 0f), this.transform);
         }
         if (west == null)
         {
-            Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 180, 0f), this.transform);
+            westTransition = Instantiate(wall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 180, 0f), this.transform);
+        }
+        // TRANSITION
+        if (northTransition == null)
+        {
+            northTransition = Instantiate(doorWall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 90, 0f), this.transform);
+            if (north != null)
+                north.southTransition = northTransition;
+        }
+        if (southTransition == null)
+        {
+            southTransition = Instantiate(doorWall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 270, 0f), this.transform);
+            if (south != null)
+                south.northTransition = southTransition;
+        }
+        if (eastTransition == null)
+        {
+            eastTransition = Instantiate(doorWall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 0, 0f), this.transform);
+            if (east != null)
+                east.westTransition = eastTransition;
+        }
+        if (westTransition == null)
+        {
+            westTransition = Instantiate(doorWall, this.transform.position, transform.rotation * Quaternion.Euler(0f, 180, 0f), this.transform);
+            if (west != null)
+                west.eastTransition = westTransition;
         }
     }
 
