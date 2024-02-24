@@ -7,6 +7,9 @@ public class TrashGenerator : MonoBehaviour
 {
   public List<GameObject> trashes;
   public Boolean instantiateTrashes;
+  public int numberOfElementToSpawn = 20;
+  public float explosionForce = 50f;
+  public float explosionRadius = 5f;
 
   void Start()
   {
@@ -24,10 +27,11 @@ public class TrashGenerator : MonoBehaviour
     BoxCollider spawnerBoxCollider = spawner.GetComponent<BoxCollider>();
     Bounds bounds = spawnerBoxCollider.bounds;
 
-    foreach (GameObject trash in trashes)
+    for (int i = 0; i < numberOfElementToSpawn; i++)
     {
-      InstantiatingTrash(bounds, trash);
+      InstantiatingTrash(bounds, trashes[UnityEngine.Random.Range(0, trashes.Count)]);
     }
+    //Explode();
   }
 
   private void InstantiatingTrash(Bounds bounds, GameObject trash)
@@ -39,5 +43,20 @@ public class TrashGenerator : MonoBehaviour
     Vector3 randomPosition = new Vector3(x, y, z);
 
     Instantiate(trash, randomPosition, Quaternion.identity);
+  }
+
+  private void Explode()
+  {
+    Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+
+    foreach (Collider hit in colliders)
+    {
+      Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+      if (rb != null)
+      {
+        rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+      }
+    }
   }
 }

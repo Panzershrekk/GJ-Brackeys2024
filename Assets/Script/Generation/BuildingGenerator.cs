@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BuildingGenerator : MonoBehaviour
 {
-  public GameObject[] roomPrefabs;
+  public RoomConfiguration[] roomPrefabs;
   public GameObject building;
-
+  
   void Start()
   {
     Dictionary<Transform, List<Transform>> buildingDictionary = CreateBuildingDictionary();
@@ -14,7 +14,7 @@ public class BuildingGenerator : MonoBehaviour
     generateBuilding(buildingDictionary, roomPrefabs);
   }
 
-  private void generateBuilding(Dictionary<Transform, List<Transform>> buildingDictionary, GameObject[] roomPrefabs)
+  private void generateBuilding(Dictionary<Transform, List<Transform>> buildingDictionary, RoomConfiguration[] roomPrefabs)
   {
     roomPrefabs = ShuffleRoomPrefabs(roomPrefabs);
 
@@ -25,17 +25,17 @@ public class BuildingGenerator : MonoBehaviour
 
       foreach (Transform roomTransform in roomTransforms)
       {
-        Instantiate(GetRandomPrefab(roomPrefabs), roomTransform.position, Quaternion.identity);
+        RoomConfiguration roomConfiguration = Instantiate(GetRandomPrefab(roomPrefabs), roomTransform.position, Quaternion.identity);
       }
     }
   }
 
-  private GameObject[] ShuffleRoomPrefabs(GameObject[] roomPrefabs)
+  private RoomConfiguration[] ShuffleRoomPrefabs(RoomConfiguration[] roomPrefabs)
   {
-    GameObject[] shuffledArray = (GameObject[])roomPrefabs.Clone();
+    RoomConfiguration[] shuffledArray = (RoomConfiguration[])roomPrefabs.Clone();
     for (int i = 0; i < shuffledArray.Length; i++)
     {
-      GameObject temp = shuffledArray[i];
+      RoomConfiguration temp = shuffledArray[i];
       int randomIndex = UnityEngine.Random.Range(0, shuffledArray.Length);
       shuffledArray[i] = shuffledArray[randomIndex];
       shuffledArray[randomIndex] = temp;
@@ -116,7 +116,7 @@ public class BuildingGenerator : MonoBehaviour
     return (rooms);
   }
 
-  private GameObject GetRandomPrefab(GameObject[] prefabs)
+  private RoomConfiguration GetRandomPrefab(RoomConfiguration[] prefabs)
   {
     if (prefabs == null || prefabs.Length == 0)
     {

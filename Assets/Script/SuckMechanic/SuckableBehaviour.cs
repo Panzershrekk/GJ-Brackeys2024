@@ -48,7 +48,6 @@ public class SuckableBehaviour : MonoBehaviour
                 RaycastHit hitInfo;
                 if (Physics.Raycast(ray, out hitInfo))
                 {
-                    Debug.Log("Hitinfo " + hitInfo.transform.name);
                     if (hitInfo.transform.GetComponent<SuckableBehaviour>() == null)
                     {
                         lineOfSigh = true;
