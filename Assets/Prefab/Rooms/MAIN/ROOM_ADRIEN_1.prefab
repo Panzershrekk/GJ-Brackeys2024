@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1107533242159124083, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2937366697069299002, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3019269462980039709, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
       propertyPath: m_Name
-      value: ROOM_EMPTY
+      value: ROOM_ADRIEN_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025683094802571705, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941029116506738594, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
