@@ -14,7 +14,6 @@ public class Pushable : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.E))
     {
-      Debug.Log("Pressing E");
       PushDoor();
     }
   }
@@ -34,6 +33,10 @@ public class Pushable : MonoBehaviour
           if (doorHinge != null)
           {
             Destroy(doorHinge);
+            // TODO: verify it's not null
+            Debug.Log("ENABLING SUCKABLEBEHAVIOUR: " + hit.collider.transform.parent.GetComponent<SuckableBehaviour>());
+            Debug.Log("Enabled ?: " + hit.collider.transform.parent.GetComponent<SuckableBehaviour>().enabled);
+            hit.collider.transform.parent.GetComponent<SuckableBehaviour>().enabled = true;
           }
 
           Vector3 forceDirection = Camera.main.transform.forward;
