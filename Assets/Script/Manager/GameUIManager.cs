@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -26,4 +27,10 @@ public class GameUIManager : MonoBehaviour
         }
     }
     #endregion
+
+    public TMP_Text scoreText;
+
+    public void UpdateScoreText(float score) {
+        this.scoreText.text = "Score: " + score.ToString();
+    }
 }
