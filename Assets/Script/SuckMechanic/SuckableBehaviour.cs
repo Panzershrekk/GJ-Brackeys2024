@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SuckableBehaviour : MonoBehaviour
 {
+    public float scoreValue = 10;
     public float resistanceTime;
     public float resistanceTimeVarianceInSeconds;
     public float proximityThresold = 1.5f;
@@ -90,6 +91,7 @@ public class SuckableBehaviour : MonoBehaviour
 
     private void OnComplete()
     {
+        GameManager.Instance.AddScore(this.scoreValue);
         _suckZone.RemoveColliderFromList(col);
         Destroy(this.gameObject);
     }

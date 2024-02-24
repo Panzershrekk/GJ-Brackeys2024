@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameStarted = false;
     public bool IsGameOver = false;
+
+    public float score = 0;
    
     public void StartGame()
     {
@@ -43,5 +45,10 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         IsGameOver = true;
+    }
+
+    public void AddScore(float score) {
+        this.score += score;
+        GameUIManager.Instance.UpdateScoreText(this.score);
     }
 }

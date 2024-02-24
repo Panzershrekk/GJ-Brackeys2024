@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bd3f1696d060d40827161bee940af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreValue: 1
   resistanceTime: 1.5
   resistanceTimeVarianceInSeconds: 0.2
   proximityThresold: 1.5
