@@ -13,7 +13,6 @@ public class TrashGenerator : MonoBehaviour
 
   void Start()
   {
-    Debug.Log("TRASH GENERATOR START");
     if (instantiateTrashes == true)
     {
       InstantiatingTrashes();

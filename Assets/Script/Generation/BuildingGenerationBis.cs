@@ -9,7 +9,8 @@ public class BuildingGenerationBis : MonoBehaviour
     public RoomConfiguration[] roomPrefabs;
     public int depthMax = 2;
     public int deadZoneInZ = 3;
-
+    public int depthDecreasePercentChance = 80;
+    
     public List<RoomConfiguration> roomConfigurations = new List<RoomConfiguration>();
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,10 @@ public class BuildingGenerationBis : MonoBehaviour
         foreach (RoomConfiguration room in roomConfigurations)
         {
             room.End();
+        }
+        foreach (RoomConfiguration room in roomConfigurations)
+        {
+            room.EndBis();
         }
     }
 

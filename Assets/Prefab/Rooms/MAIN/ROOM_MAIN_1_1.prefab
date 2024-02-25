@@ -519,8 +519,12 @@ MonoBehaviour:
   southTransition: {fileID: 0}
   westTransition: {fileID: 0}
   colliderRoomSize: {fileID: 4091028164467183264}
-  doorWall: {fileID: 1235439360991888728, guid: 2dcbde6d464cbda4c842a955daaee320, type: 3}
-  wall: {fileID: 3641770747378156068, guid: 6afac60d602078c478ca027495de2288, type: 3}
+  doorWall:
+  - {fileID: -2080073398872037506, guid: 2dcbde6d464cbda4c842a955daaee320, type: 3}
+  - {fileID: -2080073398872037506, guid: c8b869b926cd8de4eb1b97af8bededd0, type: 3}
+  wall:
+  - {fileID: 7169017692584140843, guid: 6afac60d602078c478ca027495de2288, type: 3}
+  - {fileID: 7169017692584140843, guid: cccf9f82e7e98dc4aa662fcaf2f166b5, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
