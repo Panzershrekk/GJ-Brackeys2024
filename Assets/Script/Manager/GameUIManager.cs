@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameUIManager : MonoBehaviour
@@ -29,8 +30,14 @@ public class GameUIManager : MonoBehaviour
     #endregion
 
     public TMP_Text scoreText;
+    public Component healthBar;
 
-    public void UpdateScoreText(float score) {
-        this.scoreText.text = "Score: " + score.ToString();
+    public void UpdateScoreText(float score, float trashScore) {
+        this.scoreText.text = score.ToString();
+        GaugeFill gaugeFill = healthBar.GetComponent<GaugeFill>();
+
+        if (gaugeFill != null) {
+            gaugeFill.Add((int)trashScore);
+        }
     }
 }

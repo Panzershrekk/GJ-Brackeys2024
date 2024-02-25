@@ -16,11 +16,6 @@ public class BlinkBehaviour : MonoBehaviour
 
         int randomNumber = Random.Range(0, randomMax);
 
-        // if (DOTween.IsTweening(spotlight)) {
-        //     spotlight.transform.parent.gameObject.GetComponent<Renderer>().materials[0].DisableKeyword("_EMISSION");
-        // } else {
-        //      spotlight.transform.parent.gameObject.GetComponent<Renderer>().materials[0].EnableKeyword("_EMISSION");
-        // }
         if (!DOTween.IsTweening(spotlight) && randomRange.Contains(randomNumber)) {
             
             spotlight.transform.parent.gameObject.GetComponent<MeshRenderer>().material.DOColor(Color.black, "_EmissionColor", 1).SetEase(Ease.InBounce, 100, 1);
