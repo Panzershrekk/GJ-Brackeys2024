@@ -539,6 +539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPrefabs:
   - {fileID: 3019269462980039709, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
+  - {fileID: 3019269462980039709, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
+  - {fileID: 3019269462980039709, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
   building: {fileID: 7053076815872352227, guid: f07687d953bd8420fa8c927b65f94805, type: 3}
 --- !u!4 &445459622
 Transform:
@@ -570,8 +572,10 @@ MonoBehaviour:
   startingPoint: {fileID: 1017372814}
   roomPrefabs:
   - {fileID: 7562873280545524667, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
-  depthMax: 3
+  - {fileID: 1945316322170793022, guid: 9afecd4a0b87140fda6638567dcae3a3, type: 3}
+  depthMax: 6
   deadZoneInZ: 3
+  depthDecreasePercentChance: 87
   roomConfigurations: []
 --- !u!1001 &526919344
 PrefabInstance:
