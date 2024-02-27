@@ -572,7 +572,13 @@ MonoBehaviour:
   startingPoint: {fileID: 1017372814}
   roomPrefabs:
   - {fileID: 7562873280545524667, guid: fea383e71888448d48fc82fa9ee05ac0, type: 3}
-  - {fileID: 1945316322170793022, guid: 9afecd4a0b87140fda6638567dcae3a3, type: 3}
+  roomFillers:
+  - {fileID: 5925006502774739506, guid: be530a3257996e540982519997ea706e, type: 3}
+  - {fileID: 5003302429308057618, guid: 6f89f7e018c4bef4682ce5bcf6e629ee, type: 3}
+  - {fileID: 3781755570859283863, guid: 64c336c48777aa541a3220ddef1efcb8, type: 3}
+  - {fileID: 3104671395070396083, guid: 06bba9b80b516f548b27997243166483, type: 3}
+  - {fileID: 4860057110551088042, guid: 8b8c03acd355cde47b829bc2da0aadac, type: 3}
+  - {fileID: 6960272470009444134, guid: 48e2118a2cc71d542b4581e8121d85ea, type: 3}
   depthMax: 6
   deadZoneInZ: 3
   depthDecreasePercentChance: 87

@@ -274,7 +274,7 @@ public class RoomConfiguration : MonoBehaviour
         }
     }
 
-    public void EndBis()
+    public void PlaceTransition()
     {
         int roomAroundCount = GetNeighborCount();
         int minimumDoor = roomAroundCount <= 2 ? 1 : 2;
