@@ -14,7 +14,7 @@ public class SuckableBehaviour : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
     public float endSequence = 0.2f;
-
+    public GameObject gameObjectToDestroy;
     private float _trueResistanceTime;
     private SuckZone _suckZone;
     //If enough time has passed, it is validated
@@ -48,7 +48,8 @@ public class SuckableBehaviour : MonoBehaviour
                 RaycastHit hitInfo;
                 if (Physics.Raycast(ray, out hitInfo))
                 {
-                    if (hitInfo.transform.GetComponent<SuckableBehaviour>() == null)
+                    SuckableBehaviour suckableBehaviour = hitInfo.transform.GetComponent<SuckableBehaviour>();
+                    if (suckableBehaviour == null  ||  (suckableBehaviour != null && suckableBehaviour.enabled == false))
                     {
                         lineOfSigh = true;
                     }
@@ -107,6 +108,9 @@ public class SuckableBehaviour : MonoBehaviour
     {
         GameManager.Instance.AddScore(this.scoreValue);
         _suckZone.RemoveColliderFromList(col);
-        Destroy(this.gameObject);
+        if (gameObjectToDestroy == null)
+            Destroy(this.gameObject);
+        else
+            Destroy(gameObjectToDestroy);
     }
 }
