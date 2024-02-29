@@ -31,6 +31,12 @@ public class GameUIManager : MonoBehaviour
 
     public TMP_Text scoreText;
     public Component healthBar;
+    public TMP_Text doorKickText;
+
+    public void Start()
+    {
+        doorKickText.gameObject.SetActive(false);
+    }
 
     public void UpdateScoreText(float score, float trashScore) {
         this.scoreText.text = score.ToString();

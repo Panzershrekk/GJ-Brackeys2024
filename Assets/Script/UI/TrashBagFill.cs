@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class GaugeFill : MonoBehaviour
 {
-
-    public int maxValue;
     public Image fill;
     private int currentValue;
 
@@ -20,10 +18,10 @@ public class GaugeFill : MonoBehaviour
     public void Add(int incr) {
         currentValue += incr;
 
-        if (currentValue == maxValue) {
-            currentValue = maxValue;
+        if (currentValue == GameManager.Instance.quota) {
+            currentValue = GameManager.Instance.quota;
         }
 
-        fill.fillAmount = (float)currentValue / maxValue;
+        fill.fillAmount = (float)currentValue / GameManager.Instance.quota;
     }
 }

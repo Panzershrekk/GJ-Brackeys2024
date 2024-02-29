@@ -14,12 +14,8 @@ public class BuildingGenerationBis : MonoBehaviour
 
     public List<RoomConfiguration> roomConfigurations = new List<RoomConfiguration>();
     // Start is called before the first frame update
-    void Start()
-    {
-        Generate();
-    }
 
-    private void Generate()
+    public void Generate()
     {
         int currenDepth = depthMax;
         RoomConfiguration roomConfiguration = Instantiate(GetRandomPrefab(), startingPoint.position, Quaternion.identity);

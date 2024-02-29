@@ -33,13 +33,48 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public bool IsGameStarted = false;
+    public bool IsRoundStarted = false;
+    public bool IsRoundFinished = false;
     public bool IsGameOver = false;
 
+
+    public int quota = 150;
+    public FPSController fPSController;
+    public BuildingGenerationBis buildingGenerationBis;
+
     public float score = 0;
-   
+
+    private void Start()
+    {
+        StartGame();
+    }
+
     public void StartGame()
     {
         IsGameStarted = true;
+    }
+    public void StartRound()
+    {
+        IsRoundStarted = true;
+    }
+
+    public void GenerateRound()
+    {
+        buildingGenerationBis.Generate();
+        StartRound();
+    }
+
+    public void EndCurrentRound()
+    {
+        IsRoundFinished = true;
+    }
+
+    public void ResetRound()
+    {
+        IsRoundStarted = false;
+        IsRoundFinished = false;
+        this.score = 0;
+        GameUIManager.Instance.UpdateScoreText(this.score, 0);
     }
 
     public void FinishGame()
@@ -47,8 +82,31 @@ public class GameManager : MonoBehaviour
         IsGameOver = true;
     }
 
-    public void AddScore(float score) {
+    public void CleanAll()
+    {
+        SuckableBehaviour[] suckableBehaviours = FindObjectsByType<SuckableBehaviour>(FindObjectsSortMode.None);
+
+        foreach (SuckableBehaviour suckableBehaviour in suckableBehaviours)
+        {
+            Destroy(suckableBehaviour.gameObject);
+        }
+
+        RoomConfiguration[] roomConfigs = FindObjectsByType<RoomConfiguration>(FindObjectsSortMode.None);
+
+        foreach (RoomConfiguration roomConfiguration in roomConfigs)
+        {
+            Destroy(roomConfiguration.gameObject);
+        }
+        buildingGenerationBis.roomConfigurations.Clear();
+    }
+
+    public void AddScore(float score)
+    {
         this.score += score;
         GameUIManager.Instance.UpdateScoreText(this.score, score);
+        if (this.score >= quota)
+        {
+            EndCurrentRound();
+        }
     }
 }
