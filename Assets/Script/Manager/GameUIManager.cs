@@ -38,12 +38,12 @@ public class GameUIManager : MonoBehaviour
         doorKickText.gameObject.SetActive(false);
     }
 
-    public void UpdateScoreText(float score, float trashScore) {
+    public void UpdateScoreText(float score) {
         this.scoreText.text = score.ToString();
         GaugeFill gaugeFill = healthBar.GetComponent<GaugeFill>();
 
         if (gaugeFill != null) {
-            gaugeFill.Add((int)trashScore);
+            gaugeFill.SetValue((int)score);
         }
     }
 }

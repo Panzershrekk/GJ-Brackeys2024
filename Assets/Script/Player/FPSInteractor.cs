@@ -31,7 +31,7 @@ public class InteractionObject : MonoBehaviour
             if (i != null)
             {
                 _interactable = i;
-                _interactable.actionText.gameObject.SetActive(true);
+                _interactable.DisplayText();
             }
             else
             {

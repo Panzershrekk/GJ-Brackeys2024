@@ -14,6 +14,11 @@ public class Interactable : MonoBehaviour {
         }
     }
 
+    public virtual void DisplayText()
+    {
+        actionText.gameObject.SetActive(true);
+    }
+
     public virtual void Interact()
     {
         Debug.LogWarning("Calling parent function");

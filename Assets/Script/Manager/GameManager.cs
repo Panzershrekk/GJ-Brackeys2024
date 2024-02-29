@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         IsRoundStarted = false;
         IsRoundFinished = false;
         this.score = 0;
-        GameUIManager.Instance.UpdateScoreText(this.score, 0);
+        GameUIManager.Instance.UpdateScoreText(this.score);
     }
 
     public void FinishGame()
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(float score)
     {
         this.score += score;
-        GameUIManager.Instance.UpdateScoreText(this.score, score);
+        GameUIManager.Instance.UpdateScoreText(this.score);
         if (this.score >= quota)
         {
             EndCurrentRound();

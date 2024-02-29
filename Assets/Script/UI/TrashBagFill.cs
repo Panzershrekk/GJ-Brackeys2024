@@ -6,17 +6,15 @@ using UnityEngine.UI;
 public class GaugeFill : MonoBehaviour
 {
     public Image fill;
-    private int currentValue;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentValue = 0;
         fill.fillAmount = 0;
     }
 
-    public void Add(int incr) {
-        currentValue += incr;
+    public void SetValue(int value) {
+        int currentValue = value;
 
         if (currentValue == GameManager.Instance.quota) {
             currentValue = GameManager.Instance.quota;

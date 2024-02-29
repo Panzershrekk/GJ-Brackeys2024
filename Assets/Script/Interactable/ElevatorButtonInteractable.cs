@@ -24,6 +24,19 @@ public class ElevatorButtonInteractable : Interactable
         }
     }
 
+    public override void DisplayText()
+    {
+        /*if (GameManager.Instance.IsRoundFinished == true)
+        {
+            actionText.text = "Press E to change floor";
+        }
+        else
+        {
+            actionText.text = "You need to finish your quota before changing floor";
+        }*/
+        base.DisplayText();
+    }
+
     private void CompleteSequence()
     {
         GameManager.Instance.fPSController.canMove = true;
