@@ -849,7 +849,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashes:
   - {fileID: 8535130604097490909, guid: 4bc91b593a95766408f4f1c0b4f8b900, type: 3}
+  - {fileID: 4855115028168928962, guid: 59f9121b0db71db47959007946c0b77e, type: 3}
   - {fileID: 9129676578338340617, guid: 746eafe23512f2d4c84e7ffd0975ef0b, type: 3}
+  - {fileID: 7423834959556551284, guid: 11f9b40334d970d4aa1a5c3420073629, type: 3}
+  - {fileID: 3101676359947649448, guid: d6ea92093f3c7314da8b2e589cb4cafa, type: 3}
+  - {fileID: 8555046769249846395, guid: 0f05ace3c11d09841a0190777ae51d17, type: 3}
+  - {fileID: 3602955110649262040, guid: 3813e42b010a6404c99924d9355dbe27, type: 3}
+  - {fileID: 8012183539282770919, guid: 6c9bdda3b847cdd44ac63907d94cc009, type: 3}
   instantiateTrashes: 1
   numberOfElementToSpawn: 20
   explosionForce: 50
